@@ -518,6 +518,12 @@ export type LogEvent =
         duration: number;
     }>
     | Readonly<{
+        name: "execute.next.start";
+        executeId: number;
+        response: GraphQLResponse;
+        duration: number;
+      }>
+    | Readonly<{
         name: "execute.async.module";
         executeId: number;
         operationName: string;
