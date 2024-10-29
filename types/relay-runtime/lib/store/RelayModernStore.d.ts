@@ -26,6 +26,7 @@ export default class RelayModernStore implements Store {
             operationLoader?: OperationLoader | null | undefined;
             gcReleaseBufferSize?: number | null | undefined;
             queryCacheExpirationTime?: number | null | undefined;
+            resolverContext?: unknown;
         },
     );
     getSource(): RecordSource;
