@@ -43,6 +43,7 @@ const storeWithNullOptions = new Store(source, {
     operationLoader: null,
     gcReleaseBufferSize: null,
     queryCacheExpirationTime: null,
+    resolverContext: null,
 });
 const storeWithOptions = new Store(source, {
     gcScheduler: () => undefined,
@@ -52,6 +53,11 @@ const storeWithOptions = new Store(source, {
     },
     gcReleaseBufferSize: 10,
     queryCacheExpirationTime: 1000,
+    resolverContext: {
+        customStore : {
+            nickName: "Dolorem ipsum"
+        }
+    }
 });
 
 // ~~~~~~~~~~~~~~~~~~~~~
@@ -134,6 +140,8 @@ const environment = new Environment({
             case "network.info":
             case "network.unsubscribe":
             case "execute.start":
+            case "execute.next":
+            case "execute.next.start":
             case "queryresource.fetch":
             case "read.missing_required_field":
             default:
